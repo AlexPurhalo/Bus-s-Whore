@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class BusManager extends Component {
+class BusManager extends Component {
 	constructor(props) {
 		super(props);
 
@@ -14,6 +16,7 @@ export default class BusManager extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
+		this.props.saveWhore(this.state.whore);
 		this.setState({ whore: '' });
 	}
 
@@ -22,6 +25,7 @@ export default class BusManager extends Component {
 				<form
 					onSubmit={this.handleSubmit.bind(this)}
 					id="bus-manager">
+					<h4>Add one more whore to your buss</h4>
 					<input
 						value={this.state.whore}
 						onChange={this.handleChange.bind(this)} />
@@ -30,3 +34,5 @@ export default class BusManager extends Component {
 		);
 	}
 }
+
+export default connect(null, actions)(BusManager);

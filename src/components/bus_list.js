@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const BusList = (props) => {
+	console.log(props);
 	return (
 		<ul id="bus-list">
 			{

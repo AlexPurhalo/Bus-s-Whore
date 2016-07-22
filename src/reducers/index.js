@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
+import whoresReducer from './whores';
 
 const rootReducer = combineReducers({
-  whores: (state = [
-		'Marya Egorova', 'Anastasya Goryga', 'Elezaveta Muxailovska', 'Alla Zerebnuk', 'Anzela Zerebnuk', '...'
-	]) => state
+  whores: whoresReducer
 });
 
 export default rootReducer;
